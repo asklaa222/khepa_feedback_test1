@@ -1,0 +1,162 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: beige;
+}
+
+header {
+    background-color: aqua;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+#app {
+    padding: 15px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.evaluation-item {
+    margin-bottom: 20px;
+}
+
+.evaluation-item label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.circle-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap; /* 원이 모바일 화면에서 겹치지 않도록 wrap */
+    margin-top: 15px;
+}
+
+.circle {
+    width: 80px;  /* 기본 크기 */
+    height: 80px;
+    border-radius: 50%;
+    background-color: lightgray;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.circle:hover {
+    background-color: #4CAF50;
+    transform: scale(1.1); /* 원을 클릭할 때 부드럽게 확대 */
+}
+
+.circle.selected {
+    background-color: #45a049;
+}
+
+.circle-percent {
+    color: white;
+    font-size: 18px;
+}
+
+.label {
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.label.left {
+    left: -55px;
+}
+
+.label.right {
+    right: -55px;
+}
+
+button {
+    padding: 12px 24px;
+    margin: 15px 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button[type="button"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 100%;
+}
+
+button[type="button"]:hover {
+    background-color: #45a049;
+}
+
+/* 미디어 쿼리를 사용하여 작은 화면에서 원 크기 및 위치 조정 */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    .circle {
+        width: 60px;  /* 원 크기 조정 */
+        height: 60px;
+        font-size: 14px; /* 글자 크기 조정 */
+    }
+
+    .circle-rating {
+        gap: 15px; /* 원 사이의 간격 조정 */
+        margin-top: 10px;
+    }
+
+    .label {
+        font-size: 12px; /* 레이블 글자 크기 조정 */
+    }
+
+    button[type="button"] {
+        padding: 10px 20px;
+    }
+
+    header {
+        font-size: 14px; /* 헤더 크기 조정 */
+    }
+
+    .evaluation-item label {
+        font-size: 14px;
+    }
+
+    #app {
+        padding: 10px;
+    }
+}
+
+/* 추가 스타일 - 화면 크기에 따라 원의 위치를 조정 */
+@media (max-width: 400px) {
+    .circle-rating {
+        gap: 10px; /* 더 작은 화면에서 원 간격 줄임 */
+    }
+
+    .circle {
+        width: 50px;
+        height: 50px;
+        font-size: 12px;
+    }
+}
